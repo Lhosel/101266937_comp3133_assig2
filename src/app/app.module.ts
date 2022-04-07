@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { LoginComponent } from './login/login.component';
+import { ViewlistingsComponent } from './viewlistings/viewlistings.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     PagenotfoundComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ViewlistingsComponent
   ],
   imports: [
     BrowserModule,
