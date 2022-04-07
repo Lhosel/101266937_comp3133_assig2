@@ -11,13 +11,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SignupComponent } from './signup/signup.component';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PagenotfoundComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
