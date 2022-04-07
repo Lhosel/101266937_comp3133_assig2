@@ -7,6 +7,7 @@
             <th>Address</th>
             <th>Price</th>
             <th>Username</th>
+            <th></th>
         </tr>
     </thead>
     <tbody *ngFor="let listing of listings">
@@ -14,9 +15,10 @@
             <td>{{listing.listing_id}}</td>
             <td>{{listing.listing_title}}</td>
             <td>{{listing.description}}</td>
-            <td>{{listing.street}}, {{listing.city}}}, {{listing.postal_code}}</td>
+            <td>{{listing.street}}, {{listing.city}}, {{listing.postal_code}}</td>
             <td>$ {{listing.price}}</td>
             <td>{{listing.username}}</td>
+            <button>Book</button>
         </tr>
     </tbody>
 </table>
