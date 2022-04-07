@@ -1,1 +1,29 @@
-<p>signup works!</p>
+<div class="register-container">
+    <div class="register-header">
+        <h1 class="register-h1">Sign Up</h1>
+    </div>
+    <div class="form-container">
+        <form class="submit-form" (ngSubmit)="addUser()">
+            <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username" required
+                autocomplete="off" />
+
+            <input class="form-field" type="password" [(ngModel)]="password" name="password" placeholder="password"
+                required autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="firstname" name="firstname" placeholder="first name"
+                required autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="lastname" name="lastname" placeholder="last name"
+                required autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="email" name="email" placeholder="email" required
+                autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="type" name="type" placeholder="type" required
+                autocomplete="off" />
+
+            <button class="form-field register" type="submit">Register</button>
+            <button class="form-field cancel" routerLink="home">Cancel</button>
+        </form>
+    </div>
+</div>
