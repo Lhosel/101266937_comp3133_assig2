@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
         await Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Successfully Logged In',
+          title: 'Success',
+          text: 'You have logged in successfully. Hit OK to redirect to home page',
           showConfirmButton: true,
         });
 
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
         await Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'Incorrect Username or Password',
+          title: 'Error',
+          text: 'Incorrect username or password. Please try again.',
           showConfirmButton: true,
         });
 
