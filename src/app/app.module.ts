@@ -14,6 +14,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { LoginComponent } from './login/login.component';
 import { ViewlistingsComponent } from './viewlistings/viewlistings.component';
 import { HomeComponent } from './home/home.component';
+import { SearchlistingComponent } from './searchlisting/searchlisting.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     LoginComponent,
     ViewlistingsComponent,
-    HomeComponent
+    HomeComponent,
+    SearchlistingComponent
   ],
   imports: [
     BrowserModule,
