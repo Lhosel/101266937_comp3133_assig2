@@ -1,1 +1,35 @@
-<p>addlisting works!</p>
+<div class="listing-container">
+    <div class="listing-header">
+        <h1 class="listing-h1">{{username}} - Add Listing</h1>
+    </div>
+    <div class="form-container">
+        <form class="submit-form" (ngSubmit)="addListing()">
+            <input class="form-field" type="text" [(ngModel)]="listingTitle" name="listingTitle" placeholder="title"
+                required autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="description" name="description" placeholder="description"
+                required autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="street" name="street" placeholder="street" required
+                autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="city" name="city" placeholder="city" required
+                autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="postalCode" name="postalCode" placeholder="postal code"
+                required autocomplete="off" />
+
+            <input class="form-field" type="number" [(ngModel)]="price" name="price" placeholder="0.00" required
+                autocomplete="off" />
+
+            <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username" required
+                autocomplete="off" disabled />
+
+            <input class="form-field" type="email" [(ngModel)]="email" name="email" placeholder="name@example.com"
+                required autocomplete="off" />
+
+            <button class="form-field book" type="submit">Add</button>
+            <button class="form-field cancel" routerLink="/">Cancel</button>
+        </form>
+    </div>
+</div>

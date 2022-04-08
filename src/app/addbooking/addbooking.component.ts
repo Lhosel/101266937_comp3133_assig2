@@ -123,8 +123,6 @@ export class AddbookingComponent implements OnInit {
         username: this.username
       }
     }).subscribe(async (res) => {
-      console.log(res['data']);
-
       await Swal.fire({
         position: 'center',
         icon: 'success',

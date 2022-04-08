@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Apollo, gql } from 'apollo-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -8,12 +9,24 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  user?: any;
   loggedIn?: boolean;
+  type?: string;
+  username = window.localStorage.getItem("username");
 
-  constructor(private router: Router) { }
+  private VIEW_USER = gql`
+  query ViewUser($username: String) {
+    viewUser(username: $username) {
+      type
+    }
+  }
+`
+
+  constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
     this.getLoggedIn();
+    this.getUserType();
   }
 
   getLoggedIn() {
@@ -29,5 +42,17 @@ export class NavbarComponent implements OnInit {
     this.getLoggedIn();
 
     this.router.navigate(['home']);
+  }
+
+  getUserType() {
+    this.apollo.watchQuery<any>({
+      query: this.VIEW_USER,
+      variables: {
+        username: this.username
+      }
+    }).valueChanges.subscribe((res) => {
+      this.user = res.data.viewUser[0].type;
+      this.type = this.user;
+    });
   }
 }
