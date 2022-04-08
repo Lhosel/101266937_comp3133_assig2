@@ -18,7 +18,7 @@
             <td>{{listing.street}}, {{listing.city}}, {{listing.postal_code}}</td>
             <td>$ {{listing.price}}</td>
             <td>{{listing.username}}</td>
-            <button>Book</button>
+            <button (click)="book(listing)">Book</button>
         </tr>
     </tbody>
 </table>

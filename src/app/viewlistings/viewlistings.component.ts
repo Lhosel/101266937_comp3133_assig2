@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 
@@ -10,6 +11,7 @@ import { Observable } from 'rxjs';
 export class ViewlistingsComponent implements OnInit {
 
   listings: any;
+  selected?: any;
 
   private VIEW_LISTINGS = gql`
     query ViewListings {
@@ -28,7 +30,7 @@ export class ViewlistingsComponent implements OnInit {
     }
   `
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
     this.viewListings().subscribe((res) => {
@@ -40,5 +42,11 @@ export class ViewlistingsComponent implements OnInit {
     return this.apollo.watchQuery<any>({
       query: this.VIEW_LISTINGS,
     }).valueChanges;
+  }
+
+  book(listing: any) {
+    this.selected = listing;
+
+    this.router.navigate(['book', this.selected.id]);
   }
 }
