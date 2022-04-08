@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchlistingComponent } from './searchlisting/searchlisting.component';
 import { AddbookingComponent } from './addbooking/addbooking.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { AddlistingComponent } from './addlisting/addlisting.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BookingsComponent } from './bookings/bookings.component';
     HomeComponent,
     SearchlistingComponent,
     AddbookingComponent,
-    BookingsComponent
+    BookingsComponent,
+    AddlistingComponent
   ],
   imports: [
     BrowserModule,
