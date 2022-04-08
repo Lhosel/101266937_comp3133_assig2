@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
     }
   `
 
-  constructor(private apollo: Apollo, private router: Router) { }
+  constructor(private apollo: Apollo, private router: Router, private location: Location) { }
 
   ngOnInit(): void { }
 
