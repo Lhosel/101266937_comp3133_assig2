@@ -1,0 +1,111 @@
+form {
+    margin: 60px auto;
+    margin-top: 80px;
+    background-color: #FFFFFF;
+    height: 30px;
+    width: 50%;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    transition: transform 200ms ease-in;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    all: unset;
+}
+
+table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f6fb;
+}
+
+.book-button {
+    text-align: center;
+    background: #248a3a;
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+    color: #FFFF;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.book-button:hover {
+    background: #237535;
+    transition: 0.2s;
+}
+
+.book-button:active {
+    transform: scale(0.98);
+}
+
+.select-dropdown select {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    transition: transform 200ms ease-in;
+    font-size: 16px;
+}
+
+.select-dropdown select:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+}

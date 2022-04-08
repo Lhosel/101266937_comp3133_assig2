@@ -33,8 +33,6 @@ export class ViewlistingsComponent implements OnInit {
   ngOnInit(): void {
     this.viewListings().subscribe((res) => {
       this.listings = res.data.viewListings;
-
-      console.log(this.listings);
     });
   }
 

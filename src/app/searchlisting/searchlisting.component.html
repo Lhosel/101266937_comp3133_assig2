@@ -1,1 +1,52 @@
-<p>searchlisting works!</p>
+<h1>Search By</h1>
+
+<div (ngSubmit)="setSearchType(searchType)" class="select-dropdown">
+    <select type="text" [(ngModel)]="searchType" name="searchType" id="searchType">
+        <option value="name">Listing Name</option>
+        <option value="city">City</option>
+        <option value="postal">Postal Code</option>
+    </select>
+</div>
+
+<form (ngSubmit)="getListingByName()" *ngIf="searchType === 'name'">
+    <input type="text" [(ngModel)]="searchString" id="searchString" name="searchString" placeholder="search"
+        autocomplete="off">
+    <button type="submit"><img src="https://img.icons8.com/color/search" height="30px" width="30px"></button>
+</form>
+
+<form (ngSubmit)="getListingByCity()" *ngIf="searchType === 'city'">
+    <input type="text" [(ngModel)]="searchString" id="searchString" name="searchString" placeholder="search"
+        autocomplete="off">
+    <button type="submit"><img src="https://img.icons8.com/color/search" height="30px" width="30px"></button>
+</form>
+
+<form (ngSubmit)="getListingByPostal()" *ngIf="searchType === 'postal'">
+    <input type="text" [(ngModel)]="searchString" id="searchString" name="searchString" placeholder="search"
+        autocomplete="off">
+    <button type="submit"><img src="https://img.icons8.com/color/search" height="30px" width="30px"></button>
+</form>
+
+<table *ngIf="listings.length != 0">
+    <thead>
+        <tr>
+            <th>Listing ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Price</th>
+            <th>Username</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let listing of listings">
+        <tr>
+            <td>{{listing.listing_id}}</td>
+            <td>{{listing.listing_title}}</td>
+            <td>{{listing.description}}</td>
+            <td>{{listing.street}}, {{listing.city}}, {{listing.postal_code}}</td>
+            <td>$ {{listing.price}}</td>
+            <td>{{listing.username}}</td>
+            <button class="book-button">Book</button>
+        </tr>
+    </tbody>
+</table>
