@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   firstname!: string;
   lastname!: string;
   email!: string;
-  type!: string;
+  type: string = 'user';
 
   private ADD_USER = gql`
     mutation AddUser(

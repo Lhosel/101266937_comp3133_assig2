@@ -19,8 +19,10 @@
             <input class="form-field" type="text" [(ngModel)]="email" name="email" placeholder="email" required
                 autocomplete="off" />
 
-            <input class="form-field" type="text" [(ngModel)]="type" name="type" placeholder="type" required
-                autocomplete="off" />
+            <select type="text" [(ngModel)]="type" name="type">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
 
             <button class="form-field register" type="submit">Register</button>
             <button class="form-field cancel" routerLink="home">Cancel</button>
