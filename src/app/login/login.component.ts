@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
           showConfirmButton: true,
         });
 
+        localStorage.setItem("username", this.username);
+
         this.router.navigate(['home']);
       } else {
         await Swal.fire({

@@ -6,9 +6,12 @@
             <li><a routerLink="listings">LISTINGS</a></li>
             <li><a routerLink="search">SEARCH</a></li>
         </ul>
-        <div class="user-ui">
+        <div class="user-ui" *ngIf="loggedIn == false">
             <button routerLink="login">LOGIN</button>
             <button routerLink="signup">SIGN UP</button>
+        </div>
+        <div class="user-ui" *ngIf="loggedIn == true">
+            <button class="logout" (click)="logout()">LOGOUT</button>
         </div>
     </nav>
 </div>

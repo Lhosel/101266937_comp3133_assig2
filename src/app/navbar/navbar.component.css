@@ -60,3 +60,15 @@ button:hover {
 button:active {
     transform: scale(0.98);
 }
+
+.logout {
+    background-color: #9e2929;
+}
+
+.logout:hover {
+    background-color: #8f2b2b;
+}
+
+.logout:active {
+    transform: scale(0.98);
+}
