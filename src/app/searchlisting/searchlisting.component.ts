@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 
 @Component({
@@ -9,6 +10,8 @@ import { Apollo, gql } from 'apollo-angular';
 export class SearchlistingComponent implements OnInit {
 
   listings: any = '';
+  selected?: any;
+
   searchString!: string;
   searchType: string = 'name';
   loggedIn?: boolean;
@@ -16,6 +19,7 @@ export class SearchlistingComponent implements OnInit {
   private SEARCH_LISTING_BY_NAME = gql`
     query SearchListingByName($listingTitle: String) {
       searchListingByName(listing_title: $listingTitle) {
+        id
         listing_id
         listing_title
         description
@@ -32,6 +36,7 @@ export class SearchlistingComponent implements OnInit {
   private SEARCH_LISTING_BY_CITY = gql`
     query SearchListingByCity($city: String) {
       searchListingByCity(city: $city) {
+        id
         listing_id
         listing_title
         description
@@ -47,6 +52,7 @@ export class SearchlistingComponent implements OnInit {
   private SEARCH_LISTING_BY_POSTAL = gql`
     query SearchListingByPostal($postalCode: String) {
       searchListingByPostal(postal_code: $postalCode) {
+        id
         listing_id
         listing_title
         description
@@ -59,7 +65,7 @@ export class SearchlistingComponent implements OnInit {
     }
   `
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
     this.getLoggedIn();
@@ -108,5 +114,13 @@ export class SearchlistingComponent implements OnInit {
 
   setSearchType(type: string) {
     this.searchType = type;
+  }
+
+  book(listing: any) {
+    this.selected = listing;
+
+    console.log(this.selected);
+
+    this.router.navigate(['book', this.selected.id]);
   }
 }
