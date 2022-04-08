@@ -1,5 +1,5 @@
 form {
-    margin: 60px auto;
+    margin: 50px auto;
     margin-top: 80px;
     background-color: #FFFFFF;
     height: 30px;
@@ -110,7 +110,7 @@ tr:nth-child(even) {
 
 h1 {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 50px;
     font-weight: normal;
     text-transform: uppercase;
 }

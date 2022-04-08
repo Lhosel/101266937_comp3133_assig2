@@ -1,1 +1,29 @@
-<p>created works!</p>
+<h1>{{username}} - Listings</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Listing ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Price</th>
+            <th>Username</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let listing of listings">
+        <tr>
+            <td>{{listing.listing_id}}</td>
+            <td>{{listing.listing_title}}</td>
+            <td>{{listing.description}}</td>
+            <td>{{listing.street}}, {{listing.city}}, {{listing.postal_code}}</td>
+            <td>$ {{listing.price}}</td>
+            <td>{{listing.username}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="home-button">
+    <button routerLink="/">Home</button>
+</div>

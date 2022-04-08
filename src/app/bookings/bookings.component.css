@@ -5,7 +5,7 @@ table {
     text-align: left;
     overflow: hidden;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 thead {
@@ -54,4 +54,11 @@ button:active {
 .home-button {
     margin-left: 47.5%;
     margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
