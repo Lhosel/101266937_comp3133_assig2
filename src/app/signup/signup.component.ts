@@ -66,7 +66,8 @@ export class SignupComponent implements OnInit {
       await Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Successfully Signed Up',
+        title: 'Successfull',
+        text: 'User signed up. Hit OK to go to home page.',
         showConfirmButton: true,
       });
 
