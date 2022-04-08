@@ -7,6 +7,7 @@
             <li><a routerLink="search">SEARCH</a></li>
             <li><a routerLink="bookings" *ngIf="loggedIn == true">BOOKINGS</a></li>
             <li><a routerLink="add" *ngIf="loggedIn == true && type == 'admin'">ADD</a></li>
+            <li><a routerLink="created" *ngIf="loggedIn == true && type == 'admin'">CREATED</a></li>
         </ul>
         <div class="user-ui" *ngIf="loggedIn == false">
             <button routerLink="login">LOGIN</button>

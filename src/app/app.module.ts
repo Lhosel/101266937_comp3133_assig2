@@ -18,6 +18,7 @@ import { SearchlistingComponent } from './searchlisting/searchlisting.component'
 import { AddbookingComponent } from './addbooking/addbooking.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { AddlistingComponent } from './addlisting/addlisting.component';
+import { CreatedComponent } from './created/created.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddlistingComponent } from './addlisting/addlisting.component';
     SearchlistingComponent,
     AddbookingComponent,
     BookingsComponent,
-    AddlistingComponent
+    AddlistingComponent,
+    CreatedComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddbookingComponent } from './addbooking/addbooking.component';
 import { AddlistingComponent } from './addlisting/addlisting.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { CreatedComponent } from './created/created.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'book/:id', component: AddbookingComponent },
   { path: 'bookings', component: BookingsComponent },
   { path: 'add', component: AddlistingComponent },
+  { path: 'created', component: CreatedComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
