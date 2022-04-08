@@ -36,6 +36,8 @@ nav a {
 
 .heading { 
     font-size: 25px;
+    position: fixed;
+    margin-right: 1600px;
 }
 
 .user-ui button {
