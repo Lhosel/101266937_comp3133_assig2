@@ -36,7 +36,7 @@ nav a {
 
 .heading { 
     font-size: 25px;
-    position: fixed;
+    position: absolute;
     margin-right: 1600px;
 }
 
