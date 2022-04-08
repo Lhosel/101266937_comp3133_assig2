@@ -1,1 +1,26 @@
-<p>bookings works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Listing ID</th>
+            <th>Booking ID</th>
+            <th>Booking Date</th>
+            <th>Booking Start</th>
+            <th>Booking End</th>
+            <th>Booked By</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let booking of bookings">
+        <tr>
+            <td>{{booking.listing_id}}</td>
+            <td>{{booking.booking_id}}</td>
+            <td>{{booking.booking_date}}</td>
+            <td>{{booking.booking_start}}</td>
+            <td>{{booking.booking_end}}</td>
+            <td>{{booking.username}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="home-button">
+    <button routerLink="/">Home</button>
+</div>
