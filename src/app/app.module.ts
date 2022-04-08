@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { ViewlistingsComponent } from './viewlistings/viewlistings.component';
 import { HomeComponent } from './home/home.component';
 import { SearchlistingComponent } from './searchlisting/searchlisting.component';
+import { AddbookingComponent } from './addbooking/addbooking.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchlistingComponent } from './searchlisting/searchlisting.component'
     LoginComponent,
     ViewlistingsComponent,
     HomeComponent,
-    SearchlistingComponent
+    SearchlistingComponent,
+    AddbookingComponent
   ],
   imports: [
     BrowserModule,
