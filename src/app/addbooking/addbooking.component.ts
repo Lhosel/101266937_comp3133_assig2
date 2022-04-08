@@ -18,7 +18,7 @@ export class AddbookingComponent implements OnInit {
   booking_start!: string;
   booking_end!: string;
 
-  username = 'kunga20';
+  username = window.localStorage.getItem("username");
 
   private GET_LISTING_BY_ID = gql`
     query SearchListingById($id: String) {

@@ -11,6 +11,7 @@ export class SearchlistingComponent implements OnInit {
   listings: any = '';
   searchString!: string;
   searchType: string = 'name';
+  loggedIn?: boolean;
 
   private SEARCH_LISTING_BY_NAME = gql`
     query SearchListingByName($listingTitle: String) {
@@ -60,7 +61,17 @@ export class SearchlistingComponent implements OnInit {
 
   constructor(private apollo: Apollo) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getLoggedIn();
+  }
+
+  getLoggedIn() {
+    if (localStorage.getItem("username") == null) {
+      this.loggedIn = false;
+    } else {
+      this.loggedIn = true;
+    }
+  }
 
   getListingByName() {
     this.apollo.watchQuery<any>({

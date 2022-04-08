@@ -12,6 +12,7 @@ export class ViewlistingsComponent implements OnInit {
 
   listings: any;
   selected?: any;
+  loggedIn?: boolean;
 
   private VIEW_LISTINGS = gql`
     query ViewListings {
@@ -36,6 +37,16 @@ export class ViewlistingsComponent implements OnInit {
     this.viewListings().subscribe((res) => {
       this.listings = res.data.viewListings;
     });
+
+    this.getLoggedIn();
+  }
+
+  getLoggedIn() {
+    if (localStorage.getItem("username") == null) {
+      this.loggedIn = false;
+    } else {
+      this.loggedIn = true;
+    }
   }
 
   viewListings(): Observable<any> {

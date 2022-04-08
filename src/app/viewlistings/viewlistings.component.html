@@ -18,7 +18,7 @@
             <td>{{listing.street}}, {{listing.city}}, {{listing.postal_code}}</td>
             <td>$ {{listing.price}}</td>
             <td>{{listing.username}}</td>
-            <button (click)="book(listing)">Book</button>
+            <button (click)="book(listing)" *ngIf="loggedIn == true">Book</button>
         </tr>
     </tbody>
 </table>
