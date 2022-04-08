@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddbookingComponent } from './addbooking/addbooking.component';
+import { BookingsComponent } from './bookings/bookings.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'listings', component: ViewlistingsComponent },
   { path: 'search', component: SearchlistingComponent },
   { path: 'book/:id', component: AddbookingComponent },
+  { path: 'bookings', component: BookingsComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
