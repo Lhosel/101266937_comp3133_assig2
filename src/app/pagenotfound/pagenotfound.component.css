@@ -1,0 +1,38 @@
+.body {
+    text-align: center;
+    margin-top: 100px;
+}
+
+button {
+    background: #6677EA;
+    width: 130px;
+    height: 50px;
+    color: #FFFF;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #4b57a8;
+    transition: 0.2s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+h1 {
+    padding-bottom: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+img {
+    padding: 50px;
+}
+
+p {
+    padding-bottom: 40px;
+}
