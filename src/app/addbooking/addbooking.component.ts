@@ -90,6 +90,10 @@ export class AddbookingComponent implements OnInit {
     this.viewBookings().subscribe((res) => {
       this.bookings = res.data.viewBookings.length + 1;
     });
+
+    if (this.username == null) {
+      this.router.navigate(['login']);
+    }
   }
 
   getListingById() {

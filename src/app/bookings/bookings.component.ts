@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 
 @Component({
@@ -25,10 +26,14 @@ export class BookingsComponent implements OnInit {
     }
   `
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
     this.getBookingsByUsername();
+
+    if (this.username == null) {
+      this.router.navigate(['login']);
+    }
   }
 
   getBookingsByUsername() {

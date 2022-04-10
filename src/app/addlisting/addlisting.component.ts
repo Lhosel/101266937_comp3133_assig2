@@ -22,6 +22,7 @@ export class AddlistingComponent implements OnInit {
   email!: string;
 
   username = window.localStorage.getItem("username");
+  type?: string;
 
   private ADD_LISTING = gql`
     mutation AddListing(
@@ -77,12 +78,25 @@ export class AddlistingComponent implements OnInit {
     }
   `
 
+  private USER_TYPE = gql`
+    query ViewUser($username: String) {
+      viewUser(username: $username) {
+        type
+      }
+    }
+  `
+
   constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
+    this.getUserType();
     this.viewListings().subscribe((res) => {
       this.listings = res.data.viewListings.length + 1;
     });
+
+    if (this.username == null) {
+      this.router.navigate(['login']);
+    }
   }
 
   addListing() {
@@ -116,5 +130,18 @@ export class AddlistingComponent implements OnInit {
     return this.apollo.watchQuery<any>({
       query: this.VIEW_LISTINGS,
     }).valueChanges;
+  }
+
+  getUserType() {
+    this.apollo.watchQuery<any>({
+      query: this.USER_TYPE,
+      variables: {
+        username: this.username
+      }
+    }).valueChanges.subscribe((res) => {
+      if (res.data.viewUser[0].type == 'user') {
+        this.router.navigate(['home']);
+      }
+    });
   }
 }
