@@ -3,21 +3,21 @@
         <h1 class="register-h1">Sign Up</h1>
     </div>
     <div class="form-container">
-        <form class="submit-form" (ngSubmit)="addUser()">
-            <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username" required
-                autocomplete="off" />
+        <form class="submit-form" (ngSubmit)="addUser()" ngNativeValidate>
+            <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username"
+                autocomplete="off" required />
 
             <input class="form-field" type="password" [(ngModel)]="password" name="password" placeholder="password"
-                required autocomplete="off" />
+                autocomplete="off" required />
 
             <input class="form-field" type="text" [(ngModel)]="firstname" name="firstname" placeholder="first name"
-                required autocomplete="off" />
+                autocomplete="off" />
 
             <input class="form-field" type="text" [(ngModel)]="lastname" name="lastname" placeholder="last name"
-                required autocomplete="off" />
+                autocomplete="off" required />
 
             <input class="form-field" type="text" [(ngModel)]="email" name="email" placeholder="name@example.com"
-                required autocomplete="off" />
+                autocomplete="off" required />
 
             <select type="text" [(ngModel)]="type" name="type">
                 <option value="user">User</option>

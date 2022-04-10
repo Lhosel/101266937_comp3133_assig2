@@ -3,12 +3,12 @@
         <h1 class="booking-h1">{{listing.listing_id}} - Add Booking</h1>
     </div>
     <div class="form-container">
-        <form class="submit-form" (ngSubmit)="addBooking()">
-            <input class="form-field" type="date" [(ngModel)]="booking_start" name="booking_start" required
-                autocomplete="off" />
+        <form class="submit-form" (ngSubmit)="addBooking()" ngNativeValidate>
+            <input class="form-field" type="date" [(ngModel)]="booking_start" name="booking_start" autocomplete="off"
+                required />
 
-            <input class="form-field" type="date" [(ngModel)]="booking_end" name="booking_start" required
-                autocomplete="off" />
+            <input class="form-field" type="date" [(ngModel)]="booking_end" name="booking_start" autocomplete="off"
+                required />
 
             <button class="form-field book" type="submit">Book</button>
             <button class="form-field cancel" routerLink="/">Cancel</button>

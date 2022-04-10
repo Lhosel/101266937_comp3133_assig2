@@ -50,6 +50,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void { }
 
   addUser() {
+
     this.apollo.mutate({
       mutation: this.ADD_USER,
       variables: {

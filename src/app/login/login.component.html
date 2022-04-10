@@ -3,12 +3,12 @@
         <h1 class="login-h1">Sign In</h1>
     </div>
     <div class="form-container">
-        <form class="submit-form" (ngSubmit)="getUserValidation()">
-            <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username" required
-                autocomplete="off" />
+        <form class="submit-form" (ngSubmit)="getUserValidation()" required>
+            <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username"
+                autocomplete="off" required />
 
             <input class="form-field" type="password" [(ngModel)]="password" name="password" placeholder="password"
-                required autocomplete="off" />
+                autocomplete="off" required />
 
             <button class="form-field login" type="submit">Login</button>
             <button class="form-field cancel" routerLink="/">Cancel</button>
