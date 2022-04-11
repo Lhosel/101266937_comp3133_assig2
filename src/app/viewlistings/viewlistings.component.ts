@@ -39,6 +39,7 @@ export class ViewlistingsComponent implements OnInit {
     });
 
     this.getLoggedIn();
+    this.reload();
   }
 
   getLoggedIn() {
@@ -59,5 +60,16 @@ export class ViewlistingsComponent implements OnInit {
     this.selected = listing;
 
     this.router.navigate(['book', this.selected.id]);
+  }
+
+  reload() {
+    if (window.localStorage) {
+      if (!localStorage.getItem('firstLoad')) {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }
+      else
+        localStorage.removeItem('firstLoad');
+    }
   }
 }

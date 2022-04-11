@@ -6,9 +6,12 @@
         <form class="submit-form" (ngSubmit)="addUser()" ngNativeValidate>
             <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username"
                 autocomplete="off" required />
+            <div *ngIf="usernameError" class="error-msg">{{usernameError}}</div>
 
             <input class="form-field" type="password" [(ngModel)]="password" name="password" placeholder="password"
                 autocomplete="off" required />
+            <div *ngIf="passwordError" class="error-msg">{{passwordError}}</div>
+            <div *ngIf="passwordLenError" class="error-msg">{{passwordLenError}}</div>
 
             <input class="form-field" type="text" [(ngModel)]="firstname" name="firstname" placeholder="first name"
                 autocomplete="off" />
@@ -18,6 +21,7 @@
 
             <input class="form-field" type="text" [(ngModel)]="email" name="email" placeholder="name@example.com"
                 autocomplete="off" required />
+            <div *ngIf="emailError" class="error-msg">{{emailError}}</div>
 
             <select type="text" [(ngModel)]="type" name="type">
                 <option value="user">User</option>

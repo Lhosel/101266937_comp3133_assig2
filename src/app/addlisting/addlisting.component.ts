@@ -19,10 +19,17 @@ export class AddlistingComponent implements OnInit {
   city!: string;
   postalCode!: string;
   price!: number
-  email!: string;
 
   username = window.localStorage.getItem("username");
   type?: string;
+  email?: string;
+
+  // validation format
+  postalValid = /^[A-Za-z0-9]*$/;
+
+  // error messages
+  postalError?: string;
+  priceError?: string;
 
   private ADD_LISTING = gql`
     mutation AddListing(
@@ -82,6 +89,7 @@ export class AddlistingComponent implements OnInit {
     query ViewUser($username: String) {
       viewUser(username: $username) {
         type
+        email
       }
     }
   `
@@ -100,6 +108,18 @@ export class AddlistingComponent implements OnInit {
   }
 
   addListing() {
+    if (!this.postalValid.test(this.postalCode) || this.postalCode.length < 6 || this.postalCode.length > 6) {
+      this.postalError = 'postal is not valid - example (MG3OKG)';
+    } else {
+      this.postalError = '';
+    }
+
+    if (this.price < 0) {
+      this.priceError = 'price can not be negative';
+    } else {
+      this.priceError = '';
+    }
+
     this.apollo.mutate({
       mutation: this.ADD_LISTING,
       variables: {
@@ -117,7 +137,7 @@ export class AddlistingComponent implements OnInit {
       await Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Successfull',
+        title: 'Successful',
         text: 'Listing was added. Hit OK to redirect to listings.',
         showConfirmButton: true,
       });
@@ -142,6 +162,8 @@ export class AddlistingComponent implements OnInit {
       if (res.data.viewUser[0].type == 'user') {
         this.router.navigate(['home']);
       }
+
+      this.email = res.data.viewUser[0].email;
     });
   }
 }

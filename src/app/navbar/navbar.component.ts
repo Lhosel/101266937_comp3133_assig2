@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -40,6 +41,14 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.removeItem("username");
     this.getLoggedIn();
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Successful',
+      text: 'Logged out successfully.',
+      showConfirmButton: true,
+    });
 
     this.router.navigate(['home']);
   }

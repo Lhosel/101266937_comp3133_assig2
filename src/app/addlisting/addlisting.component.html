@@ -18,15 +18,17 @@
 
             <input class="form-field" type="text" [(ngModel)]="postalCode" name="postalCode" placeholder="postal code"
                 autocomplete="off" required />
+            <div *ngIf="postalError" class="error-msg">{{postalError}}</div>
 
             <input class="form-field" type="number" [(ngModel)]="price" name="price" placeholder="0.00"
                 autocomplete="off" required />
+            <div *ngIf="priceError" class="error-msg">{{priceError}}</div>
 
             <input class="form-field" type="text" [(ngModel)]="username" name="username" placeholder="username"
                 autocomplete="off" disabled />
 
             <input class="form-field" type="email" [(ngModel)]="email" name="email" placeholder="name@example.com"
-                autocomplete="off" required />
+                autocomplete="off" disabled />
 
             <button class="form-field listing" type="submit">Add</button>
             <button class="form-field cancel" routerLink="/">Cancel</button>

@@ -130,7 +130,7 @@ export class AddbookingComponent implements OnInit {
       await Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Successfull',
+        title: 'Successful',
         text: 'Booking was added. Hit OK to redirect to listings.',
         showConfirmButton: true,
       });
